@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="ReflectASM—高效率Java反射机制
+前言： 反射的性能一直是大家有目共睹的诟病，相比于直接调用速度上差了很多。但是在很多地方，作为未知通用判断的时候，不得不调用反射类型来保障代码的复用性和框架的扩展性。所以我们只能想办法优化反射，而不能抵制反射，那么优化方案，这里给大家推荐了Reflect">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="JoJo">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="ReflectASM">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="ReflectASM—高效率Java反射机制
+前言： 反射的性能一直是大家有目共睹的诟病，相比于直接调用速度上差了很多。但是在很多地方，作为未知通用判断的时候，不得不调用反射类型来保障代码的复用性和框架的扩展性。所以我们只能想办法优化反射，而不能抵制反射，那么优化方案，这里给大家推荐了Reflect">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Archive">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttps://www.fangzhipeng.com/img/tag-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttps://www.fangzhipeng.com/img/tag-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>ReflectASM - Archive</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">葛华东的博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/503814588">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://www.fangzhipeng.com/img/tag-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>ReflectASM</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-01-02
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="ReflectASM—高效率Java反射机制"><a href="#ReflectASM—高效率Java反射机制" class="headerlink" title="ReflectASM—高效率Java反射机制"></a>ReflectASM—高效率Java反射机制</h1><ul>
+<li>前言：<br> 反射的性能一直是大家有目共睹的诟病，相比于直接调用速度上差了很多。但是在很多地方，作为未知通用判断的时候，不得不调用反射类型来保障代码的复用性和框架的扩展性。所以我们只能想办法优化反射，而不能抵制反射，那么优化方案，这里给大家推荐了ReflectASM。</li>
+<li>缘由：<br> ReflectASM 使用字节码生成的方式实现了更为高效的反射机制。执行时会生成一个存取类来 set/get 字段，访问方法或创建实例。一看到 ASM 就能领悟到 ReflectASM 会用字节码生成的方式，而不是依赖于 Java 本身的反射机制来实现的，所以它更快，并且避免了访问原始类型因自动装箱而产生的问题。</li>
+<li><p>pom.xml</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;4.10&lt;/version&gt;</span><br><span class="line">        &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;com.esotericsoftware&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;reflectasm&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;1.11.0&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>待反射的类：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package com.jts.service;</span><br><span class="line"></span><br><span class="line">public class UserService &#123;</span><br><span class="line">    public int state;</span><br><span class="line">        </span><br><span class="line">    public void update(int id, String username) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试类：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">package com.jts.test;</span><br><span class="line"></span><br><span class="line">import java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line">import org.junit.Test;</span><br><span class="line"></span><br><span class="line">import com.esotericsoftware.reflectasm.ConstructorAccess;</span><br><span class="line">import com.esotericsoftware.reflectasm.FieldAccess;</span><br><span class="line">import com.esotericsoftware.reflectasm.MethodAccess;</span><br><span class="line">import com.jts.service.UserService;</span><br><span class="line"></span><br><span class="line">public class AppTest &#123;</span><br><span class="line">    </span><br><span class="line">    public static void main(String[] args) throws Exception&#123;</span><br><span class="line">        AppTest test = new AppTest();</span><br><span class="line">        test.testJdkReflect();</span><br><span class="line">        test.testReflectAsm4Name();</span><br><span class="line">        test.testReflectAsm4Index();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">    * JDK反射调用方法</span><br><span class="line">    * @throws Exception</span><br><span class="line">    */</span><br><span class="line">    @Test</span><br><span class="line">    public void testJdkReflect() throws Exception &#123;</span><br><span class="line">        UserService target = new UserService();</span><br><span class="line">        long start = System.currentTimeMillis();</span><br><span class="line">        Method method = target.getClass().getMethod(&quot;update&quot;, int.class, String.class);</span><br><span class="line">        for (int i = 0; i &lt; 100000000; i++) &#123;</span><br><span class="line">            method.invoke(target, 1, &quot;zhangsan&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        long end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;timeout=&quot; + (end - start));//809 753 880 875 816 </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">    * ReflectAsm反射调用方法</span><br><span class="line">    * 用名称定位反射方法</span><br><span class="line">    */</span><br><span class="line">    @Test</span><br><span class="line">    public void testReflectAsm4Name() &#123;</span><br><span class="line">        UserService target = new UserService();</span><br><span class="line">        MethodAccess access = MethodAccess.get(UserService.class);//生成字节码的方式创建UserServiceMethodAccess</span><br><span class="line">        long start = System.currentTimeMillis();</span><br><span class="line">        for (int i = 0; i &lt; 100000000; i++) &#123;</span><br><span class="line">            access.invoke(target, &quot;update&quot;, 1, &quot;zhangsan&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        long end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;timeout=&quot; + (end - start));//523 382 415 489 482</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">    * ReflectAsm反射调用方法</span><br><span class="line">    * 用方法和字段的索引定位反射方法，性能高</span><br><span class="line">    */</span><br><span class="line">    @Test</span><br><span class="line">    public void testReflectAsm4Index() &#123;</span><br><span class="line">        UserService target = new UserService();</span><br><span class="line">        MethodAccess access = MethodAccess.get(UserService.class);</span><br><span class="line">        int index = access.getIndex(&quot;update&quot;, int.class, String.class);</span><br><span class="line">        long start = System.currentTimeMillis();</span><br><span class="line">        for (int i = 0; i &lt; 100000000; i++) &#123;</span><br><span class="line">            access.invoke(target, index, 1, &quot;zhangsan&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        long end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(&quot;timeout=&quot; + (end - start));//12 15 23 14 24</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">    * ReflectAsm反射来set/get字段值</span><br><span class="line">    */</span><br><span class="line">    @Test</span><br><span class="line">    public void testFieldAccess() &#123;</span><br><span class="line">        UserService target = new UserService();</span><br><span class="line">        FieldAccess fieldAccess = FieldAccess.get(target.getClass());</span><br><span class="line">        fieldAccess.set(target, &quot;state&quot;, 1);</span><br><span class="line">        int state = (Integer)fieldAccess.get(target, &quot;state&quot;);</span><br><span class="line">        System.out.println(state);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">    * ReflectAsm反射来调用构造方法</span><br><span class="line">    */</span><br><span class="line">    @Test</span><br><span class="line">    public void testConstructorAccess() &#123;</span><br><span class="line">        ConstructorAccess&lt;UserService&gt; constructorAccess = ConstructorAccess.get(UserService.class);</span><br><span class="line">        UserService userService = constructorAccess.newInstance();</span><br><span class="line">        System.out.println(userService);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">    * 查找方法的索引</span><br><span class="line">    */</span><br><span class="line">    @Test</span><br><span class="line">    public void testIndex() &#123;</span><br><span class="line">        UserService target = new UserService();</span><br><span class="line">        MethodAccess methodAccess = MethodAccess.get(target.getClass());</span><br><span class="line">        int index = methodAccess.getIndex(&quot;update&quot;, int.class, String.class);</span><br><span class="line">        System.out.println(index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结论：<br> 方法直接调用属于最快的方法，其次是java最基本的反射，而反射中又分是否缓存class两种，由结果得出其实反射中很大一部分时间是在查找class，实际invoke效率还是不错的。而reflectasm反射效率要在java传统的反射之上快了接近1/3.</p>
+</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright © JoJo 2019<br>
+		Power By Hexo. Theme From <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
